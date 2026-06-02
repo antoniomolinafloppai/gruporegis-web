@@ -9,7 +9,7 @@ Extrae URLs de:
 
 Uso:
   python scrape_images.py
-  python scrape_images.py --url https://www.gruporegis.com/ --output images/scraped
+  python scrape_images.py --url https://www.gruporegis.com/ --output scraped-images
 """
 
 from __future__ import annotations
@@ -229,8 +229,8 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--output",
-        default="images/scraped",
-        help="Carpeta de destino (por defecto: images/scraped)",
+        default="scraped-images",
+        help="Carpeta de destino (por defecto: scraped-images)",
     )
     parser.add_argument(
         "--delay",
