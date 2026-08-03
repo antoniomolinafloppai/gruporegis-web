@@ -35,7 +35,7 @@
   }
 
   /* Cookie consent */
-  var COOKIE_KEY = 'gr_regis_cookie_consent';
+  var COOKIE_KEY = 'menhir_recycling_cookie_consent';
   var banner = document.getElementById('cookie-banner');
   var settingsPanel = document.getElementById('cookie-settings');
   var settingsToggle = document.getElementById('cookie-settings-toggle');

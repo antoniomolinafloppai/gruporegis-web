@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Group Capital Regis – Styles
+   Menhir Recycling – Styles
    ========================================================================== */
 
 :root {
@@ -119,25 +119,27 @@ a:hover {
 
 .logo-img {
   display: block;
-  height: 52px;
+  height: 64px;
   width: auto;
 }
 
 .main-nav ul {
   display: flex;
+  align-items: center;
   list-style: none;
   gap: 0.25rem;
 }
 
 .main-nav a {
   display: block;
-  padding: 0.5rem 0.85rem;
+  padding: 0.5rem 0.65rem;
   color: var(--color-text);
   font-family: var(--font-heading);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
   border-radius: var(--radius);
   transition: background var(--transition), color var(--transition);
 }
@@ -146,6 +148,49 @@ a:hover {
 .main-nav a:focus {
   background: var(--color-bg-green);
   color: var(--color-primary);
+}
+
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  padding: 0.2rem;
+  border: 1px solid var(--color-primary);
+  border-radius: 999px;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.lang-toggle .lang-current,
+.main-nav .lang-toggle a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  padding: 0.3rem 0.1rem;
+  border-radius: 999px;
+  border-bottom: none;
+  line-height: 1;
+}
+
+.lang-toggle .lang-current {
+  background: var(--color-primary);
+  color: #fff;
+  cursor: default;
+}
+
+.main-nav .lang-toggle a {
+  color: var(--color-text-light);
+  background: transparent;
+  opacity: 0.7;
+}
+
+.main-nav .lang-toggle a:hover,
+.main-nav .lang-toggle a:focus {
+  background: var(--color-bg-green);
+  color: var(--color-primary);
+  opacity: 1;
 }
 
 .nav-toggle {

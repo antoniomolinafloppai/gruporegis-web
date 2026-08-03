@@ -1,0 +1,57 @@
+name: Sync gruporegis-web main → dottiemay main
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sync-dottiemay-gruporegis-web
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source (gruporegis-web main)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Sync snapshot to dottiemay main as Dottie May
+        env:
+          SYNC_TOKEN: ${{ secrets.SYNC_TOKEN }}
+          TARGET_BRANCH: main
+        run: |
+          set -euo pipefail
+
+          git clone "https://x-access-token:${SYNC_TOKEN}@github.com/dottiemay-floppai/gruporegis-web.git" _target
+
+          cd _target
+          if git ls-remote --heads origin "$TARGET_BRANCH" | grep -q "refs/heads/$TARGET_BRANCH"; then
+            git checkout "$TARGET_BRANCH"
+          else
+            git checkout --orphan "$TARGET_BRANCH"
+            git rm -rf . >/dev/null 2>&1 || true
+          fi
+          cd ..
+
+          rsync -a --delete \
+            --exclude='.git' \
+            --exclude='_target' \
+            --exclude='/.github/workflows/' \
+            ./ _target/
+
+          cd _target
+          git config user.name  "Dottie May"
+          git config user.email "dottiemay@floppai.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to sync."
+          else
+            git commit -m "Sync from gruporegis-web main @ ${GITHUB_SHA::7}"
+            git push origin "$TARGET_BRANCH"
+          fi

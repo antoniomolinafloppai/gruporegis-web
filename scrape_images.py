@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Descarga imágenes de un sitio web (p. ej. gruporegis.com).
+Descarga imágenes de un sitio web (p. ej. menhirrecycling.com).
 
 Extrae URLs de:
   - etiquetas <img> (src, srcset, data-src)
@@ -9,7 +9,7 @@ Extrae URLs de:
 
 Uso:
   python scrape_images.py
-  python scrape_images.py --url https://www.gruporegis.com/ --output scraped-images
+  python scrape_images.py --url https://www.menhirrecycling.com/ --output scraped-images
 """
 
 from __future__ import annotations
@@ -224,8 +224,8 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--url",
-        default="https://www.gruporegis.com/",
-        help="URL de la página a analizar (por defecto: gruporegis.com)",
+        default="https://www.menhirrecycling.com/",
+        help="URL de la página a analizar (por defecto: menhirrecycling.com)",
     )
     parser.add_argument(
         "--output",

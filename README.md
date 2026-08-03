@@ -1,14 +1,15 @@
-# Group Capital Regis — Web corporativa
+# Menhir Recycling — Web corporativa
 
-Sitio web estático de **Group Capital Regis**, empresa dedicada al reciclaje industrial, la sostenibilidad ambiental y la cooperación internacional.
+Sitio web estático de **Menhir Recycling**, empresa dedicada al reciclaje industrial, la sostenibilidad ambiental y la cooperación internacional.
 
-Réplica en HTML/CSS/JS del sitio [gruporegis.com](https://www.gruporegis.com/), optimizada para SEO y rendimiento.
+Réplica en HTML/CSS/JS del sitio [menhirrecycling.com](https://www.menhirrecycling.com/), optimizada para SEO y rendimiento.
 
 ## Características
 
 - HTML5 semántico con jerarquía correcta de encabezados
 - Meta tags, Open Graph, Twitter Cards y datos estructurados (JSON-LD)
 - Diseño responsive (móvil, tablet y escritorio)
+- Sitio bilingüe (inglés / español) mediante páginas separadas y etiquetas `hreflang`
 - `robots.txt` y `sitemap.xml` incluidos
 - Banner de cookies con preferencias básicas
 - Sin dependencias de build: listo para servir como sitio estático
@@ -16,20 +17,24 @@ Réplica en HTML/CSS/JS del sitio [gruporegis.com](https://www.gruporegis.com/),
 ## Estructura del proyecto
 
 ```
-grupo-regis/
-├── index.html          # Página principal
+menhir-recycling/
+├── index.html          # Página principal (inglés)
+├── es/
+│   └── index.html      # Página principal (español)
 ├── css/
 │   └── styles.css      # Estilos
 ├── js/
 │   └── main.js         # Navegación móvil y cookies
 ├── images/             # Imágenes del sitio
-│   ├── FullLogoRegis.png
+│   ├── menhir.png
+│   ├── menhirrecycling-black.png
+│   ├── menhir-logo.svg
+│   ├── logo-brand-only.svg
 │   ├── hero-bg.png
 │   ├── tire-recycling.png
 │   ├── plastic-recycling.png
 │   ├── marine-protection.jpg
-│   ├── clean-planet.jpg
-│   └── favicon.svg
+│   └── clean-planet.jpg
 ├── robots.txt
 ├── sitemap.xml
 ├── scrape_images.py    # Script auxiliar para descargar imágenes del sitio original
@@ -77,7 +82,7 @@ Solo hay que subir el contenido del repositorio manteniendo la estructura de car
 
 ## Contacto
 
-- **Email:** international@gruporegis.com
+- **Email:** info@menhirrecycling.com
 - **Teléfono:** +1 (242)
 - **N.º identificación reciclaje:** 10902
 
