@@ -83,7 +83,7 @@ Solo hay que subir el contenido del repositorio manteniendo la estructura de car
 ## Contacto
 
 - **Email:** info@menhirrecycling.com
-- **Teléfono:** +1 (242)
+- **Teléfono:** +34 936 711 241
 - **N.º identificación reciclaje:** 10902
 
 ## Repositorio
